@@ -1,7 +1,11 @@
-function App() {
+import Header from "./Header/Header";
+
+
+const App = () => {
   return (
     <div>
-      app
+      <Header />
+      <div>work</div>
     </div>
   );
 }
