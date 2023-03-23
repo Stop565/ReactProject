@@ -1,0 +1,25 @@
+.allheader{
+    background-color: black; 
+}
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+}
+
+.header__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    padding: 15px;
+    
+}
+
+.header__li{
+    border: solid;
+    border-radius: 8px;
+    border-color: aqua;
+    padding: 10px;
+    background: white;
+}
