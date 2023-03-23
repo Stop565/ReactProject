@@ -1,21 +1,22 @@
 import Header from "./Header/Header";
 import Login from "./Login/Login";
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Footer from "./Footer/Footer";
 import Main from "./Main/Main";
+import Example from "./Example/Example";
 
 
 const App = () => {
   return (
     <div>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Main />} />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/example' element={<Example />} />
 
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </BrowserRouter>
+      </Routes>
+
       <Footer />
     </div>
   );
