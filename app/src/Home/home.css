@@ -1,5 +1,30 @@
-.container {
-    margin: 0 auto;
+.containerHome {
+    margin: 30px;
     padding: 0 15px;
     max-width: 1200px;
+    display: flex;
+}
+
+.cards{
+    padding: 10px;
+
+    margin-left:10%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+    
+}
+
+.categorys{
+    margin: 10px;
+}
+.category{
+    border: solid;
+    display:flex;
+    padding: 10px;
+    font-size: 24px;
+    
 }

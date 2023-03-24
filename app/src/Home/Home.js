@@ -5,20 +5,18 @@ import './home.css'
 
 
 const Home = ({ info, category }) => {
-
     return (
-        <div className='container'>
+        <div className='containerHome'>
+            <div className='categorys'>
+                {
+                    category.map((el) => <p className='category' key={el.id}>{el.name}</p>)
+                }
+            </div>
             <div className='cards'>
                 {
                     info.map((el) => <Card key={el.id} el={el} />)
                 }
             </div>
-            <div>
-                {
-                    category.map((el) => <p key={el.id}>{el.name}</p>)
-                }
-            </div>
-
         </div>
     );
 };

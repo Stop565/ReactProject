@@ -2,17 +2,22 @@
     border: solid;
     border-radius: 8px;
     border-color: rgb(102, 105, 108);
-    height: 250px;
-    width: 250px;
+    max-height: 250px;
+    max-width: 250px;
     padding: 10px;
-    margin: 20px;
+    
 }
 
+
+.card img{
+    size: auto;
+    margin: auto auto 10px;
+}
 
 .card p{
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    padding: 20px 0 0 0 ;
+    padding: auto;
 }
