@@ -17,8 +17,8 @@
 }
 
 .header__li{
-    border: solid;
-    border-radius: 8px;
+   border: solid;
+    border-radius: 8px; 
     border-color: aqua;
     padding: 10px;
     background: white;

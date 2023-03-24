@@ -3,11 +3,14 @@
     padding: 60px 0 50px;
     color: #fff;
    
-    position: absolute;
+
+
+    flex: 0 0 auto;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 60px;
+   
 }
 
 .footer__text{
