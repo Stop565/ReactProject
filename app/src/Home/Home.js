@@ -11,10 +11,17 @@ const Home = ({ info, category }) => {
     return (
         <div className='containerHome'>
             <div className='categorys'>
+                <div className={valCat === false ? 'category active' : 'category'}
+                    onClick={() => setValcat(false)}
+                >All</div>
                 {
                     category.map((el) => {
                         return (
-                            <div className='category' key={el.id} onClick={() => setValcat(el.name)} >{el.name}</div>
+                            <div className={valCat === el.name ? 'category active' : 'category'}
+                                key={el.id}
+
+                                onClick={() => setValcat(el.name)}
+                            >{el.name}</div>
                         )
                     })
                 }
