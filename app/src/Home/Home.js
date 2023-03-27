@@ -8,19 +8,20 @@ const Home = ({ info, category }) => {
 
     const [valCat, setValcat] = useState(false);
 
+    let changeCat = (el) => {
+        if (el.name === valCat) return setValcat(false);
+        else return setValcat(el.name)
+    }
+
     return (
         <div className='containerHome'>
             <div className='categorys'>
-                <div className={valCat === false ? 'category active' : 'category'}
-                    onClick={() => setValcat(false)}
-                >All</div>
                 {
                     category.map((el) => {
                         return (
                             <div className={valCat === el.name ? 'category active' : 'category'}
                                 key={el.id}
-
-                                onClick={() => setValcat(el.name)}
+                                onClick={() => changeCat(el)}
                             >{el.name}</div>
                         )
                     })
