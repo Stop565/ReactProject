@@ -8,6 +8,7 @@ import './reset.css'
 
 import axios from 'axios'
 import { useEffect, useState } from "react";
+import OpenCard from "./OpenCard/OpenCard";
 
 const App = () => {
   const [info, setInfo] = useState([]);
@@ -37,7 +38,7 @@ const App = () => {
         <Route path='/' element={<Home info={info} category={category} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/example' element={<Example />} />
-
+        <Route path='/:id' element={<OpenCard />} />
       </Routes>
 
       <Footer />

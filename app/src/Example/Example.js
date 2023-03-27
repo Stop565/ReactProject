@@ -5,7 +5,7 @@ import './example.css'
 const Example = () => {
     return (
         <div className='example'>
-            ex
+            Кошик
         </div>
     );
 };

@@ -9,10 +9,10 @@ const Header = () => {
             <div className='container'>
                 <div className='header'>
                     <ul className='header__list'>
-                        <li className='header__li'><Link to='/'>Home</Link></li>
-                        <li className='header__li'><Link>Контакти</Link></li>
-                        <li className='header__li'><Link to='/example'>Щось</Link></li>
-                        <li className='header__li'><Link to='/login'>Зареєструватися</Link></li>
+                        <Link to='/'><li className='header__li'>Home</li></Link>
+                        <li className='header__li'>Контакти</li>
+                        <Link to='/example'><li className='header__li'>Кошик</li></Link>
+
                     </ul>
                 </div>
             </div>
