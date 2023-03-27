@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const Card = ({ el }) => {
+    console.log(el);
     return (
         <Link to={`/${el.id}`}  >
             <div className='card'  >

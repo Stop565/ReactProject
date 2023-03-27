@@ -6,9 +6,10 @@ import Home from "./Home/Home";
 import Example from "./Example/Example";
 import './reset.css'
 
-import axios from 'axios'
+import axios from 'axios';
 import { useEffect, useState } from "react";
 import OpenCard from "./OpenCard/OpenCard";
+
 
 const App = () => {
   const [info, setInfo] = useState([]);
@@ -25,9 +26,6 @@ const App = () => {
       setCategory(data)
     })
   }, []);
-
-
-  console.log(info)
 
 
 
