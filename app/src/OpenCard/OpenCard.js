@@ -19,13 +19,13 @@ const OpenCard = () => {
                 <img src={infoOne.images}></img>
                 <span>
                     <h1>{infoOne.title}</h1>
-                    <p>{infoOne.price} грн.</p>
-                    <button>В кошик</button>
+                    <p >{infoOne.price} грн.</p>
+                    <h2 className='addbasket'><button>В кошик</button></h2>
                 </span>
             </div>
             <div className='description'>{infoOne.description}</div>
 
-        </div>
+        </div >
     );
 };
 
