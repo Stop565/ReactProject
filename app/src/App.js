@@ -3,7 +3,7 @@ import Login from "./Login/Login";
 import { Routes, Route } from "react-router-dom"
 import Footer from "./Footer/Footer";
 import Home from "./Home/Home";
-import Example from "./Example/Example";
+import Basket from "./Basket/Basket";
 import './reset.css'
 
 import axios from 'axios';
@@ -35,7 +35,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home info={info} category={category} />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/example' element={<Example />} />
+        <Route path='/example' element={<Basket />} />
         <Route path='/:id' element={<OpenCard />} />
       </Routes>
 
