@@ -11,7 +11,7 @@ const Header = () => {
                     <ul className='header__list'>
                         <Link to='/'><li className='header__li'>Home</li></Link>
                         <li className='header__li'>Контакти</li>
-                        <Link to='/example'><li className='header__li'>Кошик</li></Link>
+                        <Link to='/basket'><li className='header__li'>Кошик</li></Link>
 
                     </ul>
                 </div>

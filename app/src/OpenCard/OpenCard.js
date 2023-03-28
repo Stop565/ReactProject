@@ -1,7 +1,7 @@
 import React from 'react'
 import './opencard.css'
 import { useParams } from 'react-router-dom';
-import { fetchOneel } from '../func'
+import { fetchOneel, addLocalStorage } from '../func'
 import { useEffect, useState } from "react";
 
 
@@ -12,7 +12,7 @@ const OpenCard = () => {
         fetchOneel(id).then(data => setInfoone(data))
     }, [])
 
-    console.log(infoOne);
+
     return (
         <div className='containerOpenCard'  >
             <div className='opencard'>
@@ -20,7 +20,9 @@ const OpenCard = () => {
                 <span>
                     <h1>{infoOne.title}</h1>
                     <p >{infoOne.price} грн.</p>
-                    <h2 className='addbasket'><button>В кошик</button></h2>
+                    <h2 className='addbasket'>
+                        <button onClick={() => addLocalStorage(infoOne)}>В кошик</button>
+                    </h2>
                 </span>
             </div>
             <div className='description'>{infoOne.description}</div>
