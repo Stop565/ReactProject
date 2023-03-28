@@ -17,10 +17,13 @@ const OpenCard = () => {
         <div className='containerOpenCard'  >
             <div className='opencard'>
                 <img src={infoOne.images}></img>
-                <p>{infoOne.title}</p>
-                <p>{infoOne.id}</p>
-
+                <span>
+                    <h1>{infoOne.title}</h1>
+                    <p>{infoOne.price} грн.</p>
+                    <button>В кошик</button>
+                </span>
             </div>
+            <div className='description'>{infoOne.description}</div>
 
         </div>
     );
