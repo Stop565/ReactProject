@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 
 const OpenCard = () => {
-    const [infoOne, setInfoone] = useState({ info: [] })
+    const [infoOne, setInfoone] = useState([]);
     const { id } = useParams();
     useEffect(() => {
         fetchOneel(id).then(data => setInfoone(data))

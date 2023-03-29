@@ -1,0 +1,19 @@
+.basketcard{
+    display: flex;
+    border: solid;
+    border-radius: 8px;
+    border-color: black;
+
+    height: 200px;
+    max-width: 800px;
+    margin: 30px ;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 20px;
+}
+
+.basketcard img{
+    max-height: 200px;
+    
+}

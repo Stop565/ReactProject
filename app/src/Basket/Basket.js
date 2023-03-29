@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './basket.css'
+import BasketCard from '../BasketCard/BasketCard';
+import { useEffect, useState } from "react";
 
 
 const Basket = () => {
     const [bas, setBas] = useState([])
 
-
-    //setBas(localStorage.getItem("basket"))
-    //console.log(JSON.parse(localStorage.getItem("basket")));
-
+    useEffect(() => {
+        setBas(JSON.parse(localStorage.getItem("basket")))
+    }, []);
 
     return (
-        <div className='container'>
+        <div className='containerBs'>
             <div className='basket'>
-                Кошик
+                {bas.map((el) => { return <BasketCard el={el} key={el.id}></BasketCard> })}
             </div>
         </div>
     );

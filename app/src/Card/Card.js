@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ el }) => {
 
-
-
     return (
         <Link to={`/${el.id}`}  >
             <div className='card'  >
