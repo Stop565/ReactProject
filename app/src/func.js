@@ -11,30 +11,25 @@ export const fetchOneel = (id) => {
 
 export const addLocalStorage = (item) => {
     let oldStorage = JSON.parse(localStorage.getItem("basket"));
+    let check = false;
 
-    let id = item.id;
+    if (oldStorage !== null) {
+        oldStorage.forEach(element => {
+            if (element.id === item.id) check = true;
+        });
+    }
+    if (check) return;
 
+    localStorage.removeItem("basket");
 
     if (oldStorage === null) {
-        localStorage.setItem("basket", `[{"${id}": ${JSON.stringify(item)}}]`);
+        localStorage.setItem("basket", `[${JSON.stringify(item)}]`);
     } else {
-        //let newArr = oldStorage.push({ id: JSON.stringify(item) });
-        oldStorage.push(`{"${id}": ${JSON.stringify(item)})}`);
-        console.log(oldStorage);
-        //localStorage.setItem("basket", `{"session":[${JSON.stringify(oldStorage.session)},{"${id}": ${JSON.stringify(item)}}]}`);
-
-
-        //localStorage.setItem("basket", oldStorage.id = JSON.stringify(item));
-        //localStorage.setItem("basket", JSON.stringify(newArr));
-        //localStorage.setItem("basket", oldStorage + `{"${id}": ${JSON.stringify(item)}}`);
+        let resArr = oldStorage.concat(item);
+        console.log(resArr);
+        localStorage.setItem("basket", `${JSON.stringify(resArr)}`)
 
     }
-
-    //console.log(JSON.parse(localStorage.getItem("basket")).session[0]);
-
-    console.log(localStorage.getItem("basket"));
-    //console.log(JSON.parse(localStorage.getItem("basket")));
-
 }
 
 
