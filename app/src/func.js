@@ -32,6 +32,21 @@ export const addLocalStorage = (item) => {
     }
 }
 
+export const removeItemBasket = (remEl) => {
+    console.log(remEl);
+
+    let oldStorage = JSON.parse(localStorage.getItem("basket"));
+
+    let newArr = [];
+
+    oldStorage.forEach((element => {
+        if (element.id !== remEl.id) newArr.push(element);
+    }));
+
+    localStorage.setItem("basket", `${JSON.stringify(newArr)}`)
+
+}
+
 
 
 

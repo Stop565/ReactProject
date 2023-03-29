@@ -1,12 +1,13 @@
 import React from 'react'
 import './opencard.css'
 import { useParams } from 'react-router-dom';
-import { fetchOneel, addLocalStorage } from '../func'
+import { fetchOneel, addLocalStorage } from '../func';
 import { useEffect, useState } from "react";
 
 
 const OpenCard = () => {
     const [infoOne, setInfoone] = useState([]);
+
     const { id } = useParams();
     useEffect(() => {
         fetchOneel(id).then(data => setInfoone(data))
