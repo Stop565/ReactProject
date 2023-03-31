@@ -1,0 +1,33 @@
+.email{
+    margin: 30px;
+}
+
+.email input{
+    height: 40px;
+    width: 200px;
+
+    border: solid;
+    border-radius: 8px;
+    border-color: rgb(102, 105, 108);
+    padding: 5px;
+}
+
+.password{
+    margin: 30px;
+}
+
+.password input{
+    height: 40px;
+    width: 200px;
+
+    border: solid;
+    border-radius: 8px;
+    border-color: rgb(102, 105, 108);
+    padding: 5px;
+
+}
+
+.btn{
+    font-size: 20px;
+    margin: 30px;
+}
