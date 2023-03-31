@@ -1,4 +1,6 @@
+import Register from "./Login/Register";
 import Login from "./Login/Login";
+
 import { Routes, Route } from "react-router-dom"
 
 import Home from "./Home/Home";
@@ -37,10 +39,10 @@ const App = () => {
           <Route path='basket' element={<Basket />} />
           <Route path=':id' element={<OpenCard />} />
 
-
+          <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
-        </Route>
 
+        </Route>
 
 
       </Routes>

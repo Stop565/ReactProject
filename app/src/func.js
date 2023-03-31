@@ -48,6 +48,54 @@ export const removeItemBasket = (remEl) => {
 }
 
 
+export const createUser = (nameUser, email, password) => {
+    axios.post('https://api.escuelajs.co/api/v1/users/', {
+        "name": nameUser,
+        "email": email,
+        "password": password,
+        "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=867"
+    }).then((response) => {
+        localStorage.setItem("userRes", JSON.stringify(response.data))
+    }).catch(function (error) {
+        console.log("Щось не так func createUser");
+    });
+
+    axios.post('https://api.escuelajs.co/api/v1/auth/login', {
+        "email": email,
+        "password": password,
+    }).then((response) => {
+        localStorage.setItem("token", JSON.stringify(response.data));
+        authUser(response);
+    }).catch(function (error) {
+        console.log("Щось не так func createUser");
+    });
+
+
+
+    const authUser = (token) => {
+        console.log(token.data.access_token)
+        axios({
+            method: "get",
+            url: "https://api.escuelajs.co/api/v1/auth/profile",
+            headers: {
+                Authorization: `Bearer ${token.data.access_token}`,
+            },
+        }).then((response) => {
+            console.log(response.data)
+        }).catch(function (error) {
+            console.log("Щось не так func createUser");
+        });
+    }
+
+    console.log("func createUser");
+
+
+}
+
+
+
+
+
 
 
 
