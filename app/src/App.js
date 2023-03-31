@@ -36,8 +36,13 @@ const App = () => {
           <Route index element={<Home info={info} category={category} />} />
           <Route path='basket' element={<Basket />} />
           <Route path=':id' element={<OpenCard />} />
+
+
+          <Route path='/login' element={<Login />} />
         </Route>
-        <Route path='login' element={<Login />} />
+
+
+
       </Routes>
 
     </>
