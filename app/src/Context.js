@@ -5,16 +5,10 @@ import axios from "axios";
 export const CustomContext = createContext();
 
 export const Context = (props) => {
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState(false);
     const [resuser, setResuser] = useState([]);
 
-    useEffect(() => {
-        axios.get('https://api.escuelajs.co/api/v1/users').then(({ data }) => {
-            console.log(data);
-        })
-    }, []);
-
-
+    console.log(user);
 
     const value = {
         user,

@@ -39,11 +39,11 @@ const App = () => {
           <Route path='basket' element={<Basket />} />
           <Route path=':id' element={<OpenCard />} />
 
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-
         </Route>
 
+
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
 
       </Routes>
 

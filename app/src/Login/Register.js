@@ -4,7 +4,7 @@ import { CustomContext } from '../Context';
 import { useEffect, useState, useContext } from "react";
 import "./login.css"
 import { createUser } from '../func';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -14,13 +14,14 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
     const [name, setName] = useState('');
+    const navigate = useNavigate();
 
     const registerUser = () => {
         if (name !== "" && email !== "" && password !== "") {
             createUser(name, email, password);
-            console.log("ggg")
+            setUser(true)
+            navigate("/");
         }
-
     }
 
 
