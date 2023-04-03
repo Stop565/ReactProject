@@ -56,7 +56,6 @@ export const createUser = (nameUser, email, password) => {
         "password": password,
         "avatar": "https://api.lorem.space/image/face?w=640&h=480&r=867"
     }).then((response) => {
-        localStorage.setItem("userW", JSON.stringify(response.data))
         console.log("Новий юзер");
 
     }).catch(function (error) {
@@ -67,6 +66,8 @@ export const createUser = (nameUser, email, password) => {
         "email": email,
         "password": password,
     }).then((response) => {
+        console.log(response);
+
         if (response.status === 201) {
             localStorage.setItem("token", JSON.stringify(response.data));
             authUser1(response);
@@ -104,29 +105,35 @@ export const loginUser = (email, password) => {
         console.log(response)
         if (response.status === 201) {
             localStorage.setItem("token", JSON.stringify(response.data));
+            loginBearer(response.data);
         }
         console.log("Отримання токенів");
     }).catch(function (error) {
         console.log(error);
     });
 
-    const token = JSON.parse(localStorage.getItem("token"));
+    // const token = JSON.parse(localStorage.getItem("token"));
 
-    axios({
-        method: "get",
-        url: "https://api.escuelajs.co/api/v1/auth/profile",
-        headers: {
-            Authorization: `Bearer ${token.access_token}`,
-        },
-    }).then((response) => {
-        console.log(response)
-        console.log("Запит на авторизацію");
-        localStorage.setItem("userAuth", JSON.stringify(response.data))
+    const loginBearer = (res) => {
+        axios({
+            method: "get",
+            url: "https://api.escuelajs.co/api/v1/auth/profile",
+            headers: {
+                Authorization: `Bearer ${res.access_token}`,
+            },
+        }).then((response) => {
+            //console.log(response)
+            console.log("Запит на авторизацію");
+            localStorage.setItem("userAuth", JSON.stringify(response.data))
+            if (response.status === 200) {
+                //console.log("thghgjdjhjg");
 
+            }
 
-    }).catch(function (error) {
-        console.log("Щось не так func createUser");
-    });
+        }).catch(function (error) {
+            console.log("Щось не так func createUser");
+        });
+    }
 
 }
 

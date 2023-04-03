@@ -19,7 +19,7 @@ const Register = () => {
     const registerUser = () => {
         if (name !== "" && email !== "" && password !== "") {
             createUser(name, email, password);
-            setUser(true)
+            //setUser(true)
             navigate("/");
         }
     }

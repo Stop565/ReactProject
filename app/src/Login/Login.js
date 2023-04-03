@@ -18,7 +18,7 @@ const Login = () => {
     const auth = () => {
         if (email !== "" && password !== "") {
             loginUser(email, password);
-            setUser(true);
+            //setUser(true);
             navigate("/");
         }
     }
@@ -36,7 +36,7 @@ const Login = () => {
                             onChange={(e) => setPass(e.target.value)}
                             placeholder="Введіть пароль"></input>
                     </div>
-                    <div className='btn' onClick={() => auth()}  >
+                    <div className='btn' onClick={() => { auth() }}  >
                         <button>Ввійти</button>
                     </div>
                     <div className='btn-1'  ><Link to="/register">У мене немає аккаунта</Link></div>

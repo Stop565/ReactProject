@@ -3,7 +3,22 @@ import { Link, Outlet } from 'react-router-dom';
 import './header.css'
 import './footer.css'
 
+import { CustomContext } from '../Context';
+import { useEffect, useState, useContext } from "react";
+
+
 const HeaderFooter = () => {
+    const { user, setUser } = useContext(CustomContext);
+    const [isAuth, setisauth] = useState(user);
+
+    const logOut = () => {
+        localStorage.removeItem("userAuth");
+        localStorage.removeItem("token");
+        setUser(false);
+        //setisauth(false);
+    }
+
+    console.log(user);
     return (
         <>
             <div className='allheader'>
@@ -12,7 +27,9 @@ const HeaderFooter = () => {
                         <ul className='header__list'>
                             <Link to='/'><li className='header__li'>Home</li></Link>
                             <Link to='/basket'><li className='header__li'>Кошик</li></Link>
-                            <Link to='/login'><li className='header__li'>Login</li></Link>
+                            {user ? <li className='header__li' onClick={() => logOut()}>Log out</li>
+                                : <Link to='/login'><li className='header__li'>Login</li></Link>
+                            }
                         </ul>
                     </div>
                 </div>
