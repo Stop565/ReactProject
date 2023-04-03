@@ -9,19 +9,22 @@ const Login = () => {
     const [password, setPass] = useState('');
 
     return (
-        <div>
-            <div className='email'>
-                <input type="email" className='inpur__email'
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Введіть Email" ></input>
-            </div>
-            <div className='password'>
-                <input type="password" className='inpur__password'
-                    onChange={(e) => setPass(e.target.value)}
-                    placeholder="Введіть пароль"></input>
-            </div>
-            <div className='btn'  ><button>Ввійти</button>
-                <Link to="/register"> <div className='btn-1'  >Ще немає аккаунта</div></Link>
+        <div className='containerLogin'>
+            <div className='contant'>
+                <div className='email'>
+                    <input type="email" className='inpur__email'
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Введіть Email" ></input>
+                </div>
+                <div className='password'>
+                    <input type="password" className='inpur__password'
+                        onChange={(e) => setPass(e.target.value)}
+                        placeholder="Введіть пароль"></input>
+                </div>
+                <div className='btn'  >
+                    <button>Ввійти</button>
+                </div>
+                <div className='btn-1'  ><Link to="/register">У мене немає аккаунта</Link></div>
             </div>
         </div>
     )
